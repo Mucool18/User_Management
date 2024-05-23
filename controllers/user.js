@@ -12,7 +12,7 @@ export const createUser = async (req, res)=>{
         return;
     }
     try {
-        const userExists = await User.findOne({ username });
+        const userExists = await User.findOne({ email });
         if (userExists) {
           return res.status(400).json({ success: false, data: 'User already exists' });
         }

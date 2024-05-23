@@ -34,9 +34,6 @@ export const addUserToOrganization = async (req, res) => {
       }
            
       user.organizations.push(organization._id); // Admin will add user to organisation
-      if(!user.activeOrganization){
-        user.activeOrganization = organization._id;
-      }
       if(!session.currentOrganizationId){
         session.currentOrganizationId = organization._id;
         await session.save();

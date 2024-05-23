@@ -25,10 +25,6 @@ const userSchema = new mongoose.Schema({
         enum: ["ADMIN", "USER"],
         default: "USER"
     },
-    activeOrganization:{
-        type: mongoose.Schema.ObjectId,
-        ref: "Organization"
-    },
     organizations: [{type: mongoose.Schema.ObjectId, ref: 'Organization'}]
 });
 
